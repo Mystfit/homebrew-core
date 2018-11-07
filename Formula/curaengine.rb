@@ -1,8 +1,8 @@
 class Curaengine < Formula
   desc "C++ 3D printing GCode generator"
   homepage "https://github.com/Ultimaker/CuraEngine"
-  url "https://github.com/Ultimaker/CuraEngine/archive/15.04.tar.gz"
-  sha256 "d577e409b3e9554e7d2b886227dbbac6c9525efe34df4fc7d62e9474a2d7f965"
+  url "https://github.com/Ultimaker/CuraEngine/archive/3.5.1.tar.gz"
+  sha256 "1edabbc520f2a331394d5db82a951c258da7d8827c0fa9188e77d735250530e8"
   head "https://github.com/Ultimaker/CuraEngine.git"
 
   bottle do
@@ -15,9 +15,19 @@ class Curaengine < Formula
     sha256 "4252263a845ca5fc5631c4211eac9a95ad53e20cc07dfa0ea6422ea83ca178e7" => :yosemite
   end
 
+  depends_on "cmake" => :build
+  depends_on "libarcus" => :build
+  depends_on "protobuf" => :build
+
   def install
-    system "make", "VERSION=#{version}"
-    bin.install "build/CuraEngine"
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+    end
+
+
+    # system "make", "VERSION=#{version}"
+    # bin.install "build/CuraEngine"
   end
 
   test do
