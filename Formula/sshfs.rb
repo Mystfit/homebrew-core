@@ -1,8 +1,8 @@
 class Sshfs < Formula
   desc "File system client based on SSH File Transfer Protocol"
   homepage "https://osxfuse.github.io/"
-  url "https://github.com/libfuse/sshfs/releases/download/sshfs-2.10/sshfs-2.10.tar.gz"
-  sha256 "70845dde2d70606aa207db5edfe878e266f9c193f1956dd10ba1b7e9a3c8d101"
+  url "https://github.com/libfuse/sshfs/archive/sshfs-3.5.0.tar.gz"
+  sha256 "a34b214f41edabe89e1b8172a0c169b3c760e2e1f1d7fb3d5aefdc7a297f7678"
 
   bottle do
     cellar :any
