@@ -2,8 +2,8 @@ class Riak < Formula
   desc "Distributed database"
   homepage "http://basho.com/products/riak-kv/"
   url "https://github.com/basho/riak.git",
-      :tag      => "riak-2.2.3",
-      :revision => "d96b67eeb5f934c673ee8e5c75c00a3861f388aa"
+      :tag      => "riak-2.2.6",
+      :revision => "ba59ff1d4ea6193259827349d08715a4a47dda1a"
 
   bottle do
     sha256 "163efe4af2492bd3885aebeafb894c2ec5f6c3cbc08cdfaf78de07deaf645336" => :high_sierra
@@ -84,7 +84,7 @@ class Riak < Formula
 
     logdir = var/"log/riak"
     datadir = var/"lib/riak"
-    libexec.install Dir["distdir/osxbuild/riak-2.2.3/*"]
+    libexec.install Dir["distdir/osxbuild/riak-2.2.6/*"]
     logdir.mkpath
     datadir.mkpath
     (datadir/"ring").mkpath
