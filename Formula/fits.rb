@@ -1,8 +1,8 @@
 class Fits < Formula
   desc "File Information Tool Set"
   homepage "https://projects.iq.harvard.edu/fits"
-  url "https://github.com/harvard-lts/fits/archive/1.2.1.tar.gz"
-  sha256 "2cf9e39f7bf129d447ebe96a426d1d8dd1f1af9b1664b34e0918e9dc65c046bc"
+  url "https://github.com/harvard-lts/fits/archive/1.4.0.tar.gz"
+  sha256 "0bc58ae590da470d17d0e9845c81cda022b4d11542f9558769c1179cfa51f667"
 
   bottle do
     cellar :any
@@ -12,11 +12,11 @@ class Fits < Formula
     sha256 "135d0c1a755ecb3cbd2277a789849eb0178f62e972de2e43ea4bfe1b14d17b26" => :el_capitan
   end
 
-  depends_on "ant" => :build
+  depends_on "maven" => :build
   depends_on :java => "1.7+"
 
   def install
-    system "ant", "clean-compile-jar", "-noinput"
+    system "mvn", "clean", "package", "-DskipTests"
 
     libexec.install "lib",
                     %w[tools xml],
@@ -25,8 +25,8 @@ class Fits < Formula
     (libexec/"lib").install "lib-fits/fits-#{version}.jar"
 
     inreplace "fits-env.sh" do |s|
-      s.gsub! /^FITS_HOME=.*/, "FITS_HOME=#{libexec}"
-      s.gsub! "${FITS_HOME}/lib", libexec/"lib"
+      s.gsub!(/^FITS_HOME=.*/, "FITS_HOME=#{libexec}")
+      s.gsub!("${FITS_HOME}/lib", libexec/"lib")
     end
 
     inreplace %w[fits.sh fits-ngserver.sh],
