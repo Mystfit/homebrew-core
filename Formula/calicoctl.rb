@@ -13,6 +13,7 @@ class Calicoctl < Formula
     sha256 "f3c800eb604d967120d6b26897b25a85b2e877d05502baaa17ecd1d8dbbdb24a" => :el_capitan
   end
 
+  depends_on "docker" => :build
   depends_on "glide" => :build
   depends_on "go" => :build
 
@@ -23,7 +24,7 @@ class Calicoctl < Formula
     dir.install buildpath.children
     cd dir do
       system "glide", "install", "-strip-vendor"
-      system "make", "binary"
+      system "make", "build"
       bin.install "dist/calicoctl-darwin-amd64" => "calicoctl"
       prefix.install_metafiles
     end
