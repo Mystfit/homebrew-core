@@ -1,8 +1,8 @@
 class Redo < Formula
   desc "Implements djb's redo: an alternative to make(1)"
   homepage "https://github.com/apenwarr/redo"
-  url "https://github.com/apenwarr/redo/archive/redo-0.21.tar.gz"
-  sha256 "79a077092bd8085d6bd98226960590e0fe04ada5a4e1ee6adee3856cf0167b25"
+  url "https://github.com/apenwarr/redo/archive/redo-0.31.tar.gz"
+  sha256 "eb721c3655d164e94417bf76777a896b6fc6c0b5ad3a4056a7721ca06c96d6d9"
 
   bottle do
     cellar :any_skip_relocation
@@ -11,15 +11,11 @@ class Redo < Formula
     sha256 "630ac52a05e6b4586f1f78219bc9bce9d17cd67ab1b4acccb3d62256c2839bce" => :sierra
   end
 
-  resource "docs" do
-    url "https://github.com/apenwarr/redo.git", :branch => "man"
-  end
+  depends_on "python@2"
 
   def install
     ENV["PREFIX"] = prefix
     system "./redo", "install"
-    rm share/"doc/redo/README.md" # lets not have two copies
-    man1.install resource("docs")
   end
 
   test do
