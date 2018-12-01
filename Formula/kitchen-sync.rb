@@ -12,14 +12,11 @@ class KitchenSync < Formula
     sha256 "d74bd7054a4a9fa23610d383936aeb122986ec47af70f269e502b5215d91791f" => :sierra
   end
 
-  deprecated_option "without-mysql" => "without-mysql-client"
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
+  depends_on "mysql-client"
   depends_on "yaml-cpp"
-  depends_on "mysql-client" => :recommended
-  depends_on "postgresql" => :optional
 
   needs :cxx11
 
