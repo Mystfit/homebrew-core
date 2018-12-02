@@ -3,9 +3,8 @@ class Awslogs < Formula
 
   desc "Simple command-line tool to read AWS CloudWatch logs"
   homepage "https://github.com/jorgebastida/awslogs"
-  url "https://github.com/jorgebastida/awslogs/archive/0.10.tar.gz"
-  sha256 "6b05e930ab83d2f7fce4f4aa0320bb855efcd951deb70644a043db539bc56bcf"
-  revision 1
+  url "https://github.com/jorgebastida/awslogs/archive/0.11.0.tar.gz"
+  sha256 "6258a121629cb872ee61fe78bf112753c8782c971524f0943a0e21f74d5e28bd"
   head "https://github.com/jorgebastida/awslogs.git"
 
   bottle do
@@ -18,43 +17,38 @@ class Awslogs < Formula
   depends_on "python"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/58/61/50d2e459049c5dbc963473a71fae928ac0e58ffe3fe7afd24c817ee210b9/boto3-1.4.4.tar.gz"
-    sha256 "518f724c4758e5a5bed114fbcbd1cf470a15306d416ff421a025b76f1d390939"
+    url "https://files.pythonhosted.org/packages/fe/ea/3f0dedaf1b733908a171c2aa24d322ad18c1aee171afff88a7b9e843d845/boto3-1.9.60.tar.gz"
+    sha256 "6e9f48f3cd16f4b4e1e2d9c49c0644568294f67cda1a93f84315526cbd7e70ae"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e4/f9/b7026f410edf33b6c10143482b42d0168c7ffdb14dcc89fe0eb4c7f2d7c9/botocore-1.5.38.tar.gz"
-    sha256 "dd6314cee663ccbb96aa115ec188075567df685956e43df22e795cf450d49b11"
+    url "https://files.pythonhosted.org/packages/ec/52/992d721d2dab6e0b6ce1a92b892ca75d48e4200de7adc7af0eb65a3141ae/botocore-1.12.60.tar.gz"
+    sha256 "e298eaa3883d5aa62a21e84b68a3b4d47b582fffdb93efefe53144d2ed9a824c"
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/05/25/7b5484aca5d46915493f1fd4ecb63c38c333bd32aa9ad6e19da8d08895ae/docutils-0.13.1.tar.gz"
-    sha256 "718c0f5fb677be0f34b781e04241c4067cbd9327b66bdd8e763201130f5175be"
-  end
-
-  resource "futures" do
-    url "https://files.pythonhosted.org/packages/55/db/97c1ca37edab586a1ae03d6892b6633d8eaa23b23ac40c7e5bbc55423c78/futures-3.0.5.tar.gz"
-    sha256 "0542525145d5afc984c88f914a0c85c77527f65946617edb5274f72406f981df"
+    url "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"
+    sha256 "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/96/6e/0723cccec195a37de6a428ad8879fe063b6debe5c855444e9285b27d253e/jmespath-0.9.2.tar.gz"
-    sha256 "54c441e2e08b23f12d7fa7d8e6761768c47c969e6aed10eead57505ba760aee9"
+    url "https://files.pythonhosted.org/packages/e5/21/795b7549397735e911b032f255cff5fb0de58f96da794274660bca4f58ef/jmespath-0.9.3.tar.gz"
+    sha256 "6a81d4c9aa62caf061cb517b4d9ad1dd300374cd4706997aff9cd6aedd61fc64"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/51/fc/39a3fbde6864942e8bb24c93663734b74e281b984d1b8c4f95d64b0c21f6/python-dateutil-2.6.0.tar.gz"
-    sha256 "62a2f8df3d66f878373fd0072eacf4ee52194ba302e00082828e0d263b0418d2"
+    url "https://files.pythonhosted.org/packages/0e/01/68747933e8d12263d41ce08119620d9a7e5eb72c876a3442257f74490da0/python-dateutil-2.7.5.tar.gz"
+    sha256 "88f9287c0174266bb0d8cedd395cfba9c58e87e5ad86b2ce58859bc11be3cf02"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/8b/13/517e8ec7c13f0bb002be33fbf53c4e3198c55bb03148827d72064426fe6e/s3transfer-0.1.10.tar.gz"
-    sha256 "ba1a9104939b7c0331dc4dd234d79afeed8b66edce77bbeeecd4f56de74a0fc1"
+    url "https://files.pythonhosted.org/packages/9a/66/c6a5ae4dbbaf253bd662921b805e4972451a6d214d0dc9fb3300cb642320/s3transfer-0.1.13.tar.gz"
+    sha256 "90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1"
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz"
-    sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+    url "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"
+    sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
   end
 
   resource "termcolor" do
