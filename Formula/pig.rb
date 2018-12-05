@@ -11,7 +11,8 @@ class Pig < Formula
 
   def install
     (libexec/"bin").install "bin/pig"
-    libexec.install ["pig-#{version}-core-h1.jar", "pig-#{version}-core-h2.jar", "lib"]
+    libexec.install Dir["pig-#{version}-core-h*.jar"]
+    libexec.install "lib"
     (bin/"pig").write_env_script libexec/"bin/pig", Language::Java.java_home_env("1.6+").merge(:PIG_HOME => libexec)
   end
 
