@@ -35,7 +35,7 @@ class Zeromq < Formula
     ENV["LIBUNWIND_CFLAGS"] = "-I#{sdk}/usr/include"
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "./configure", "--disable-dependency-tracking", "--enable-drafts", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
